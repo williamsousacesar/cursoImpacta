@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cadastroProfessor.cadastroProfessor.model.Professor;
 import cadastroProfessor.cadastroProfessor.repository.ProfessorRepository;
+import cadastroProfessor.cadastroProfessor.service.ProfessorServico;
 
 @RestController
 @RequestMapping("/api")
@@ -32,6 +33,11 @@ public class ProfessorController {
 	
 	@PostMapping("/cadastraProfessor")
 	public void cadastraProfessor(@RequestBody Professor professor) {
+		
+		ProfessorServico professorServico = new ProfessorServico();
+		
+		professor.setSalario(professorServico.calculaSalario(professor.getQtdHorasTrabalhadas(), professor.getValorHoraTrabalhada()));
+		
 		professorRepository.save(professor);
 	}
 	
@@ -54,6 +60,6 @@ public class ProfessorController {
 		
 		professorRepository.save(professor);
 		
-	}
+	}	
 	
 }

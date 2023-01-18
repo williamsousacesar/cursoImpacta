@@ -17,6 +17,12 @@ public class Professor {
 	private String nome;
 	
 	private int idade;
+	
+	private double qtdHorasTrabalhadas; 
+	
+	private double valorHoraTrabalhada;
+	
+	private double salario;	
 
 	public long getId() {
 		return id;
@@ -49,5 +55,30 @@ public class Professor {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
+
+	public double getQtdHorasTrabalhadas() {
+		return qtdHorasTrabalhadas;
+	}
+
+	public void setQtdHorasTrabalhadas(long qtdHorasTrabalhadas) {
+		this.qtdHorasTrabalhadas = qtdHorasTrabalhadas;
+	}
+
+	public double getValorHoraTrabalhada() {
+		return valorHoraTrabalhada;
+	}
+
+	public void setValorHoraTrabalhada(long valorHoraTrabalhada) {
+		this.valorHoraTrabalhada = valorHoraTrabalhada;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+		
 
 }
