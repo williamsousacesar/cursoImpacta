@@ -1,9 +1,12 @@
 package cadastroProfessor.cadastroProfessor.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Professor {
@@ -22,7 +25,10 @@ public class Professor {
 	
 	private double valorHoraTrabalhada;
 	
-	private double salario;	
+	private double salario;
+	
+	@OneToMany
+	private List<Turma> turma;
 
 	public long getId() {
 		return id;
@@ -79,6 +85,13 @@ public class Professor {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
-		
 
+	public List<Turma> getTurma() {
+		return turma;
+	}
+
+	public void setTurma(List<Turma> turma) {
+		this.turma = turma;
+	}
+	
 }
