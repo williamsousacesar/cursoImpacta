@@ -54,4 +54,13 @@ public class ProfessorControllerMono {
 		
 	}
 	
+	@RequestMapping("/deletarProfessor")
+	public String deletarProfessor(long codigo) {
+		Professor professor = professorRepository.findById(codigo);
+
+		professorRepository.delete(professor);
+
+		return "redirect:/listaDeProfessores";
+	}
+	
 }
