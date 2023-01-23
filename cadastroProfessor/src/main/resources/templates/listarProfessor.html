@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Lista de Professores</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
 	<h1>Tabela de Professores</h1>
@@ -29,6 +30,7 @@
 				<td><span th:text="${professor.valorHoraTrabalhada}" ></span></td>
 				<td><span th:text="${professor.salario}" ></span></td>
 				<td><a   th:href="${(#mvc.url('PCM#deletarProfessor').arg(0, professor.id)).build()}">Deletar</a></td>
+			    <td><a   th:href="${(#mvc.url('PCM#editarProfessorMetodo').arg(0, professor.id)).build()}">Editar</a></td>
 			<tr>
 		</tbody>
 	</table>

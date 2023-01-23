@@ -24,7 +24,7 @@ public class Professor {
 	private double qtdHorasTrabalhadas; 
 	
 	private double valorHoraTrabalhada;
-	
+
 	private double salario;
 	
 	@OneToMany
@@ -62,22 +62,6 @@ public class Professor {
 		this.idade = idade;
 	}
 
-	public double getQtdHorasTrabalhadas() {
-		return qtdHorasTrabalhadas;
-	}
-
-	public void setQtdHorasTrabalhadas(long qtdHorasTrabalhadas) {
-		this.qtdHorasTrabalhadas = qtdHorasTrabalhadas;
-	}
-
-	public double getValorHoraTrabalhada() {
-		return valorHoraTrabalhada;
-	}
-
-	public void setValorHoraTrabalhada(long valorHoraTrabalhada) {
-		this.valorHoraTrabalhada = valorHoraTrabalhada;
-	}
-
 	public double getSalario() {
 		return salario;
 	}
@@ -92,6 +76,22 @@ public class Professor {
 
 	public void setTurma(List<Turma> turma) {
 		this.turma = turma;
+	}
+
+	public double getQtdHorasTrabalhadas() {
+		return qtdHorasTrabalhadas;
+	}
+
+	public void setQtdHorasTrabalhadas(double qtdHorasTrabalhadas) {
+		this.qtdHorasTrabalhadas = qtdHorasTrabalhadas;
+	}
+
+	public double getValorHoraTrabalhada() {
+		return valorHoraTrabalhada;
+	}
+
+	public void setValorHoraTrabalhada(double valorHoraTrabalhada) {
+		this.valorHoraTrabalhada = valorHoraTrabalhada;
 	}
 	
 }
