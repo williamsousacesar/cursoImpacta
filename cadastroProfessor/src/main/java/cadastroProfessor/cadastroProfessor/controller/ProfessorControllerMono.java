@@ -18,12 +18,6 @@ public class ProfessorControllerMono {
 	ProfessorRepository professorRepository;
 	
 	@RequestMapping("/")
-	public String indexMetodo() {
-		
-		return "index";
-	}
-	
-	@RequestMapping("/listaDeProfessores")
 	public ModelAndView listarAlunoMetodo() {
 		
 		ModelAndView modelAndView = new ModelAndView("listarProfessor");
@@ -44,7 +38,7 @@ public class ProfessorControllerMono {
 	    
 		professorRepository.save(professor);
 		
-		return "redirect:/listaDeProfessores";
+		return "redirect:/";
 	
 	}
 	
@@ -61,7 +55,7 @@ public class ProfessorControllerMono {
 
 		professorRepository.delete(professor);
 
-		return "redirect:/listaDeProfessores";
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value ="/{codigo}", method = RequestMethod.GET)
@@ -83,7 +77,7 @@ public class ProfessorControllerMono {
 		professor.setSalario(processorServico.calculaSalario(professor.getQtdHorasTrabalhadas(), professor.getValorHoraTrabalhada()));
 		
 		professorRepository.save(professor);
-		return "redirect:/listaDeProfessores";
+		return "redirect:/";
 	}
 	
 }
