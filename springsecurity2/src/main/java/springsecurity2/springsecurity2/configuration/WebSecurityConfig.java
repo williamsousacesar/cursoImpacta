@@ -48,9 +48,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		auth
+		/*auth
 			.inMemoryAuthentication() // Indica que será armezado em memoria(dados do usuario)
-			.withUser("Kate").password("{noop}2023").roles("USER");//Inidica usuario e senha
+			.withUser("Kate").password("{noop}2023").roles("USER");//Inidica usuario e senha*/
 		
 	
 		auth
