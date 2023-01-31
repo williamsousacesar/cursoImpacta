@@ -26,7 +26,9 @@ public class WebSecurityConfig {
 		.permitAll() 
 		.and() 
 		.logout()
-		.permitAll();
+		.permitAll()
+		.and()
+		.csrf().disable();
     return http.build();
 
 	}
