@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lista de Professores</title>
+<title>Cadastrar Turma</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 </head>
@@ -27,7 +27,7 @@
 			<tr>
 		</thead>
 		<tbody>
-			<tr th:each="professor : ${professores}">
+			<tr th:each="professor : ${professor}">
 				<td><span th:text="${professor.id}" ></span></td>
 				<td><span th:text="${professor.nome}" ></span></td>
 				<td><span th:text="${professor.idade}" ></span></td>
@@ -35,23 +35,31 @@
 				<td><span th:text="${professor.qtdHorasTrabalhadas}" ></span></td>
 				<td><span th:text="${professor.valorHoraTrabalhada}" ></span></td>
 				<td><span th:text="${professor.salario}" ></span></td>
-				<td><a   th:href="${(#mvc.url('PCM#deletarProfessor').arg(0, professor.id)).build()}">Deletar</a></td>
-			    <td><a   th:href="${(#mvc.url('PCM#editarProfessorMetodo').arg(0, professor.id)).build()}">Editar</a></td>
-			    <td><a   th:href="${(#mvc.url('TCM#cadastrarTurmaMetodo').arg(0, professor.id)).build()}">Cadastrar Turma</a></td>
 			<tr>
 		</tbody>
 	</table>
-	
-</body>
+
+		<form method="post" th:object="${turma}">
+		
+		<div>
+			<p>Nome</p>
+			<input type="text" value="" name="nome" class="nomeEstilo" />
+		</div>
+		<div>
+			<p>Sala de Aula</p>
+			<input type="text" value="" name="salaDeAula" class="idadeEstilo" />
+		</div>
+		<br>
+		<button class="btn btn-primary" type="submit">Enviar</button>
+		</form>
+
 	<style>
 		.centralizarObjeto{
 			width: 1100px;
 			margin-left: auto;
 			margin-right: auto;
 			border: medium;
-			border: 1px solid blue;
-			
-			
+			border: 1px solid blue;	
 		
 		}
 	
